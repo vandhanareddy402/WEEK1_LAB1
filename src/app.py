@@ -21,62 +21,42 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 # In-memory activity database
 activities = {
-    "Chess Club": {
-        "description": "Learn strategies and compete in chess tournaments",
-        "schedule": "Fridays, 3:30 PM - 5:00 PM",
-        "max_participants": 12,
-        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
-    },
-    "Programming Class": {
-        "description": "Learn programming fundamentals and build software projects",
-        "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
-        "max_participants": 20,
-        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
-    },
-    "Gym Class": {
-        "description": "Physical education and sports activities",
-        "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
-        "max_participants": 30,
-        "participants": ["john@mergington.edu", "olivia@mergington.edu"]
-    },
-    "Basketball": {
-        "description": "Team basketball practice and games",
-        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
-        "max_participants": 15,
-        "participants": []
-    },
-    "Tennis": {
-        "description": "Tennis training and matches",
-        "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
-        "max_participants": 10,
-        "participants": []
-    },
-    "Drama Club": {
-        "description": "Acting, stage performance, and theatrical productions",
-        "schedule": "Wednesdays, 4:00 PM - 6:00 PM",
-        "max_participants": 25,
-        "participants": []
-    },
-    "Art Studio": {
-        "description": "Painting, drawing, and sculpture techniques",
-        "schedule": "Saturdays, 10:00 AM - 12:00 PM",
-        "max_participants": 18,
-        "participants": []
-    },
-    "Robotics Club": {
-        "description": "Design and build robots for competitions",
-        "schedule": "Mondays and Wednesdays, 4:30 PM - 6:00 PM",
-        "max_participants": 16,
-        "participants": []
-    },
     "Debate Team": {
-        "description": "Develop argumentative and public speaking skills",
-        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "description": "Develop public speaking and argumentation skills through competitive debate",
+        "schedule": "Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": ["alex@mergington.edu"]
+        },
+        "Math Olympiad": {
+        "description": "Solve challenging mathematical problems and compete in competitions",
+        "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+        "max_participants": 25,
+        "participants": ["james@mergington.edu", "lisa@mergington.edu"]
+        },
+        "Basketball": {
+        "description": "Learn basketball skills and play competitive games",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
         "max_participants": 20,
-        "participants": []
-    }
-}
-activities = {
+        "participants": ["kevin@mergington.edu"]
+        },
+        "Soccer": {
+        "description": "Train in soccer techniques and participate in matches",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 22,
+        "participants": ["ryan@mergington.edu", "sarah@mergington.edu"]
+        },
+        "Painting Studio": {
+        "description": "Explore painting techniques and create artistic masterpieces",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": ["maya@mergington.edu"]
+        },
+        "Theater Club": {
+        "description": "Act in plays and musicals, develop stage presence and dramatic skills",
+        "schedule": "Mondays and Wednesdays, 5:00 PM - 6:30 PM",
+        "max_participants": 25,
+        "participants": ["ava@mergington.edu", "lucas@mergington.edu"]
+        },
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
