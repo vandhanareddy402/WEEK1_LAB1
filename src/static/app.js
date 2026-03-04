@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // Clear loading message
       activitiesList.innerHTML = "";
 
+      // Clear and reset activity select dropdown
+      activitySelect.innerHTML = '<option value="">-- Select an activity --</option>';
+
       // Populate activities list
       Object.entries(activities).forEach(([name, details]) => {
         const activityCard = document.createElement("div");
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const spotsLeft = details.max_participants - details.participants.length;
 
         const participantsList = details.participants.length > 0 
-          ? `<ul>${details.participants.map(p => `<li>${p}</li>`).join('')}</ul>` 
+          ? `<ul>${details.participants.map(p => `<li><span>${p}</span> <button onclick="unregister('${name}', '${p}')">×</button></li>`).join('')}</ul>` 
           : '<p>No participants yet.</p>';
 
         activityCard.innerHTML = `
@@ -44,6 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       activitiesList.innerHTML = "<p>Failed to load activities. Please try again later.</p>";
       console.error("Error fetching activities:", error);
+    }
+  }
+
+  // Function to unregister a participant
+  async function unregister(activityName, email) {
+    try {
+      const response = await fetch(
+        `/activities/${encodeURIComponent(activityName)}/signup?email=${encodeURIComponent(email)}`,
+        { method: 'DELETE' }
+      );
+      if (response.ok) {
+        fetchActivities(); // Refresh the activities list
+      } else {
+        alert('Failed to unregister participant.');
+      }
+    } catch (error) {
+      console.error('Error unregistering:', error);
+      alert('An error occurred while unregistering.');
     }
   }
 
